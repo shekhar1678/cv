@@ -7,7 +7,7 @@ import os
 from PIL import Image
 from fastai.vision import open_image
 import matplotlib.pyplot as plt
-
+import numpy as np
 from skimage import data
 from skimage import filters
 from skimage import exposure
@@ -212,6 +212,7 @@ class Tank():
 
         for ax in axes.flat:
             ax.axis('off')
+        return fig,ax    
 
 
 @st.cache
@@ -248,11 +249,15 @@ def main():
             complete_path = os.path.join(lat_dir,image_file.name)
             bb_box = predict_floating_head_tank(complete_path)
             image_path = complete_path
-            box_dict = bb_box[0]
-            img = open_image(image_path)
-            obj = Tank(box_dict,img)
-
-            st.image(obj.plot_tank())
+            if len(bb_box)>0:
+                box_dict = bb_box[0]
+                img = open_image(image_path)
+                obj = Tank(box_dict,img)
+                fig,ax = obj.plot_tank()
+                st.pyplot(fig)
+            else:
+                st.write("No Floating head Tank  detected in image")
+            #st.image(obj.plot_tank())
 
 
 
