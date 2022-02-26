@@ -27,7 +27,6 @@ debugpy==1.5.1
 decorator==5.1.1
 defusedxml==0.7.1
 distro==1.4.0
-distro-info===0.23ubuntu1
 docopt==0.6.2
 entrypoints==0.3
 executing==0.8.2
