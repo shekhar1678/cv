@@ -116,7 +116,6 @@ pycups==1.9.73
 pydantic==1.8.2
 pydeck==0.7.1
 Pygments==2.11.2
-PyGObject==3.36.0
 PyJWT==1.7.1
 pymacaroons==0.13.0
 Pympler==1.0.1
