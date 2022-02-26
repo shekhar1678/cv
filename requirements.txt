@@ -1,4 +1,3 @@
-absl
 absl_py==1.0.0
 fastai==1.0.61
 gdown==4.3.1
