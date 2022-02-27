@@ -16,6 +16,7 @@ from skimage import segmentation
 from skimage import morphology
 from skimage import color
 
+# https://www.youtube.com/watch?v=UyWEo-q4BGY
 
 def intersection(bb1, bb2):
     '''
@@ -224,7 +225,7 @@ def load_image(image_file):
 def main():
     st.title("File Upload ")
 
-    menu = ["Home"]
+    menu = ["Home","About"]
     choice = st.sidebar.selectbox("Menu", menu)
 
     if choice == "Home":
@@ -259,6 +260,10 @@ def main():
                 st.write("No Floating head Tank  detected in image")
             #st.image(obj.plot_tank())
 
+    if choice == 'About':
+        st.write("Source code is at https://github.com/shekhar1678/cv")
+        st.write("First execute create_data.py internally to create dataset")
+        st.write("create_data.py is used to create folder tank_image ")
 
 
 if __name__ == '__main__':
